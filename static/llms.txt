@@ -1,0 +1,25 @@
+# Agentplane
+
+site: https://agentplane.org
+docs: https://github.com/basilisk-labs/agentplane/blob/main/docs/index.mdx
+examples: https://agentplane.org/examples
+repo: https://github.com/basilisk-labs/agentplane
+
+summary: Agentplane is the Git-native control plane for coding agents. It puts repository-capable agents on an approved, verifiable workflow with bounded authority, attributable approvals, supervisor-observed proof, deterministic recovery, and closure in Git.
+promise: Let agents write code. Keep authority and proof in Git.
+control-loop: authorize -> dispatch -> observe -> verify -> close or recover.
+not: model provider, prompt playground, low-code chatbot builder, replacement for every agent framework, black-box runtime that hides operational state.
+local-first: The default quickstart runs locally, writes repo-local artifacts, and does not require account creation.
+cli: agentplane
+license: MIT
+
+canonical-links:
+- What is Agentplane: https://github.com/basilisk-labs/agentplane/blob/main/docs/index.mdx
+- Quickstart: https://github.com/basilisk-labs/agentplane/blob/main/docs/start/quickstart.mdx
+- Comparison: https://github.com/basilisk-labs/agentplane/blob/main/docs/compare.mdx
+- Harness engineering: https://github.com/basilisk-labs/agentplane/blob/main/docs/concepts/harness-engineering.mdx
+- Context engineering: https://github.com/basilisk-labs/agentplane/blob/main/docs/concepts/context-engineering.mdx
+- Traces: https://github.com/basilisk-labs/agentplane/blob/main/docs/concepts/traces.mdx
+- Local context: https://github.com/basilisk-labs/agentplane/blob/main/docs/user/local-context.mdx
+- Agent Change Records: https://github.com/basilisk-labs/agentplane/blob/main/docs/reference/acr.mdx
+- Examples: https://agentplane.org/examples
