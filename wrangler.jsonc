@@ -1,0 +1,12 @@
+{
+  "$schema":"node_modules/wrangler/config-schema.json",
+  "name":"agentplane-v2",
+  "main":"./src/worker.ts",
+  "compatibility_date":"2026-09-30",
+  "compatibility_flags":["nodejs_compat"],
+  "workers_dev":true,
+  "routes":[{"pattern":"v2.agentplane.org","custom_domain":true}],
+  "d1_databases":[{"binding":"DB","database_name":"agentplane-v2"}],
+  "r2_buckets":[{"binding":"MEDIA","bucket_name":"agentplane-v2-media"}],
+  "triggers":{"crons":["* * * * *"]}
+}
