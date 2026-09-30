@@ -1,1 +1,13 @@
-{"extends":"astro/tsconfigs/strict","include":[".astro/types.d.ts","src/**/*","emdash-env.d.ts"],"exclude":["dist","build"]}
+{
+  "extends":"astro/tsconfigs/strict",
+  "include":[
+    ".astro/types.d.ts",
+    "src/**/*.astro",
+    "src/components/Home.tsx",
+    "src/data/**/*.ts",
+    "src/worker.ts",
+    "src/live.config.ts",
+    "emdash-env.d.ts"
+  ],
+  "exclude":["dist","build","src/pages/**/*.tsx","src/theme/**"]
+}
