@@ -1,39 +1,32 @@
 # agentplane-web
 
-[![Website CI](https://github.com/basilisk-labs/agentplane-web/actions/workflows/site.yml/badge.svg)](https://github.com/basilisk-labs/agentplane-web/actions/workflows/site.yml)
+Independent Astro + EmDash site for Agentplane.
 
-The independent static website for [Agentplane](https://agentplane.org), the Git-native control plane for coding agents.
+Target origin: **https://v2.agentplane.org**
 
-This repository owns the homepage, blog, examples, presentation assets, styling, and GitHub Pages deployment. Product documentation and CLI code remain in [basilisk-labs/agentplane](https://github.com/basilisk-labs/agentplane). Documentation links open canonical files in that repository. This site does not import documentation, build the CLI, or depend on its CI. `redirects.json` preserves old documentation URLs as static links to canonical source files; update that mapping here when a linked page moves.
+The marketing site and editorial runtime live here. Product documentation remains Git-native in `basilisk-labs/agentplane`.
 
-## Develop
-
-Use Node.js 24 and Bun 1.4.2.
+## Development
 
 ```sh
-bun install --frozen-lockfile --ignore-scripts
-bun run start
+bun install
+bun run dev
 ```
 
-## Validate and build
+EmDash admin: `/_emdash/admin`.
+
+## Validation
 
 ```sh
 bun run check
 ```
 
-This typechecks the site, checks content, generates static HTML into `build/`, and validates local links and assets. To preview the production build:
+## Deployment
+
+The Cloudflare Worker, D1 database, R2 bucket, and the `v2.agentplane.org` Custom Domain are declared in `wrangler.jsonc`.
 
 ```sh
-bun run serve
-bun run smoke:site
+bun run deploy
 ```
 
-## Publish
-
-The `Website CI` workflow checks pull requests. Pushes to `main` and manual runs on `main` build and deploy to GitHub Pages. Enable Pages with **GitHub Actions** as its source and configure `agentplane.org` as the custom domain. No workflow in the framework repository triggers this deployment.
-
-Blog posts live in `blog/`, pages in `src/pages/`, shared content in `src/data/`, and static assets in `static/`. Update product links when canonical documentation moves. Keep `CONTENT.md` as the homepage editorial guide.
-
-## License
-
-[MIT](LICENSE). Website source extracted from [basilisk-labs/agentplane](https://github.com/basilisk-labs/agentplane).
+See `CONTENT_ARCHITECTURE.md` for the Git/D1 ownership model.
