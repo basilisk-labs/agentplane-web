@@ -1,0 +1,715 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Agentplane v2",
+    "description": "Git-tracked baseline schema and content for v2.agentplane.org",
+    "author": "Basilisk Labs"
+  },
+  "settings": {
+    "title": "Agentplane",
+    "tagline": "The Git-native control plane for coding agents."
+  },
+  "blockTypes": [
+    {
+      "slug": "ap_hero",
+      "label": "Hero",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "eyebrow",
+              "label": "Eyebrow",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "title_lines",
+              "label": "Title lines",
+              "type": "repeater",
+              "required": true,
+              "validation": {
+                "minItems": 1,
+                "maxItems": 4,
+                "subFields": [
+                  {
+                    "slug": "text",
+                    "label": "Line",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            },
+            {
+              "slug": "subtitle",
+              "label": "Subtitle",
+              "type": "text",
+              "required": true
+            },
+            {
+              "slug": "trust_line",
+              "label": "Trust line",
+              "type": "string"
+            },
+            {
+              "slug": "receipt_id",
+              "label": "Receipt ID",
+              "type": "string"
+            },
+            {
+              "slug": "receipt_objective",
+              "label": "Receipt objective",
+              "type": "string"
+            },
+            {
+              "slug": "receipt_commit",
+              "label": "Receipt commit",
+              "type": "string"
+            },
+            {
+              "slug": "receipt_rows",
+              "label": "Receipt rows",
+              "type": "repeater",
+              "validation": {
+                "maxItems": 8,
+                "subFields": [
+                  {
+                    "slug": "label",
+                    "label": "Label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "value",
+                    "label": "Value",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "detail",
+                    "label": "Detail",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ap_authority_gap",
+      "label": "Authority gap",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "eyebrow",
+              "label": "Eyebrow",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ap_control_loop",
+      "label": "Control loop",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "eyebrow",
+              "label": "Eyebrow",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            },
+            {
+              "slug": "steps",
+              "label": "Steps",
+              "type": "repeater",
+              "required": true,
+              "validation": {
+                "minItems": 1,
+                "maxItems": 8,
+                "subFields": [
+                  {
+                    "slug": "id",
+                    "label": "ID",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "icon",
+                    "label": "Icon",
+                    "type": "select",
+                    "required": true,
+                    "options": [
+                      "authorize",
+                      "run",
+                      "verify",
+                      "record"
+                    ]
+                  },
+                  {
+                    "slug": "tone",
+                    "label": "Tone",
+                    "type": "select",
+                    "required": true,
+                    "options": [
+                      "blue",
+                      "violet",
+                      "green",
+                      "coral"
+                    ]
+                  },
+                  {
+                    "slug": "title",
+                    "label": "Title",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "text",
+                    "label": "Text",
+                    "type": "text",
+                    "required": true
+                  },
+                  {
+                    "slug": "evidence",
+                    "label": "Evidence",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "artifact",
+                    "label": "Artifact",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ap_durable_proof",
+      "label": "Durable proof",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "eyebrow",
+              "label": "Eyebrow",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            },
+            {
+              "slug": "commit",
+              "label": "Commit",
+              "type": "string"
+            },
+            {
+              "slug": "summary",
+              "label": "Summary",
+              "type": "string"
+            },
+            {
+              "slug": "files",
+              "label": "Files",
+              "type": "repeater",
+              "validation": {
+                "maxItems": 12,
+                "subFields": [
+                  {
+                    "slug": "path",
+                    "label": "Path",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            },
+            {
+              "slug": "facts",
+              "label": "Facts",
+              "type": "repeater",
+              "validation": {
+                "maxItems": 12,
+                "subFields": [
+                  {
+                    "slug": "label",
+                    "label": "Label",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "slug": "value",
+                    "label": "Value",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            },
+            {
+              "slug": "footer",
+              "label": "Footer",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ap_works_with",
+      "label": "Works with",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            },
+            {
+              "slug": "tools",
+              "label": "Tools",
+              "type": "repeater",
+              "validation": {
+                "maxItems": 12,
+                "subFields": [
+                  {
+                    "slug": "name",
+                    "label": "Name",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ap_closing",
+      "label": "Closing CTA",
+      "category": "Homepage",
+      "currentVersion": 1,
+      "versions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "slug": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "slug": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "seo"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "slug": "description",
+          "label": "SEO description",
+          "type": "text"
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "blocks",
+          "validation": {
+            "allowedTypes": [
+              "ap_hero",
+              "ap_authority_gap",
+              "ap_control_loop",
+              "ap_durable_proof",
+              "ap_works_with",
+              "ap_closing"
+            ],
+            "maxItems": 20
+          }
+        }
+      ]
+    },
+    {
+      "slug": "posts",
+      "label": "Blog posts",
+      "labelSingular": "Post",
+      "urlPattern": "/blog/{slug}",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "scheduling",
+        "search",
+        "seo"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "excerpt",
+          "label": "Excerpt",
+          "type": "text"
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        },
+        {
+          "slug": "release_version",
+          "label": "Release version",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "tag",
+      "label": "Tags",
+      "labelSingular": "Tag",
+      "hierarchical": false,
+      "collections": [
+        "posts"
+      ],
+      "terms": [
+        {
+          "slug": "release",
+          "label": "Release"
+        },
+        {
+          "slug": "context",
+          "label": "Context"
+        },
+        {
+          "slug": "workflow",
+          "label": "Workflow"
+        },
+        {
+          "slug": "architecture",
+          "label": "Architecture"
+        }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary navigation",
+      "items": [
+        {
+          "type": "custom",
+          "label": "Docs",
+          "url": "https://github.com/basilisk-labs/agentplane/blob/main/docs/index.mdx"
+        },
+        {
+          "type": "custom",
+          "label": "Examples",
+          "url": "/examples"
+        },
+        {
+          "type": "custom",
+          "label": "Blog",
+          "url": "/blog"
+        },
+        {
+          "type": "custom",
+          "label": "GitHub",
+          "url": "https://github.com/basilisk-labs/agentplane"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "pages": [
+      {
+        "id": "home",
+        "slug": "home",
+        "status": "published",
+        "data": {
+          "title": "Agentplane | Git-native control plane for coding agents",
+          "description": "Agentplane puts coding agents on an approved, verifiable Git workflow with bounded authority, observed proof, recovery, and deterministic closure.",
+          "content": [
+            {
+              "_type": "ap_hero",
+              "_version": 1,
+              "_key": "hero",
+              "eyebrow": "The Git-native control plane for coding agents",
+              "title": "Let agents write code. Keep authority and proof in Git.",
+              "title_lines": [
+                {
+                  "text": "Let agents write code."
+                },
+                {
+                  "text": "Keep authority and"
+                },
+                {
+                  "text": "proof in Git."
+                }
+              ],
+              "subtitle": "Agentplane puts coding agents on an approved, verifiable repository workflow.",
+              "trust_line": "Agent-agnostic · Local-first · No account required · MIT licensed",
+              "receipt_id": "run_9f3c2a1b · 2026-08-19 14:32 UTC",
+              "receipt_objective": "Fix parser edge case",
+              "receipt_commit": "b1e9d4f",
+              "receipt_rows": [
+                {
+                  "label": "Authority",
+                  "value": "Bounded WorkOrder",
+                  "detail": "scope + allowed effects"
+                },
+                {
+                  "label": "Scope",
+                  "value": "src/parser/**",
+                  "detail": "modify + test"
+                },
+                {
+                  "label": "Observed facts",
+                  "value": "3 files changed",
+                  "detail": "repository readback"
+                },
+                {
+                  "label": "Verification",
+                  "value": "Unit · lint · types",
+                  "detail": "all required checks passed"
+                }
+              ]
+            },
+            {
+              "_type": "ap_authority_gap",
+              "_version": 1,
+              "_key": "authority-gap",
+              "eyebrow": "The authority gap",
+              "title": "A diff shows what changed. It does not show what was authorized or independently verified.",
+              "text": "Without a durable control record, reviewers have to trust the worker's own report about scope, checks, and completion."
+            },
+            {
+              "_type": "ap_control_loop",
+              "_version": 1,
+              "_key": "control-loop",
+              "eyebrow": "The control loop",
+              "title": "One clear path from intent to durable proof.",
+              "text": "Agentplane separates the worker from the authority that approves, observes, verifies, and closes its work.",
+              "steps": [
+                {
+                  "id": "authorize",
+                  "icon": "authorize",
+                  "tone": "blue",
+                  "title": "Authorize",
+                  "text": "Define the objective, writable scope, and allowed effects.",
+                  "evidence": "The agent receives one bounded WorkOrder.",
+                  "artifact": "AgentWorkOrder v2"
+                },
+                {
+                  "id": "run",
+                  "icon": "run",
+                  "tone": "violet",
+                  "title": "Run",
+                  "text": "Dispatch one semantic episode to the coding agent.",
+                  "evidence": "Actions stay inside the approved boundary.",
+                  "artifact": "AgentSemanticResult v2"
+                },
+                {
+                  "id": "verify",
+                  "icon": "verify",
+                  "tone": "green",
+                  "title": "Verify",
+                  "text": "Read repository facts and execute required checks.",
+                  "evidence": "Observed results stay separate from agent claims.",
+                  "artifact": "task verification"
+                },
+                {
+                  "id": "record",
+                  "icon": "record",
+                  "tone": "coral",
+                  "title": "Record",
+                  "text": "Close deterministically or preserve an exact recovery route.",
+                  "evidence": "Authority and proof travel with the code in Git.",
+                  "artifact": "acr.json"
+                }
+              ]
+            },
+            {
+              "_type": "ap_durable_proof",
+              "_version": 1,
+              "_key": "durable-proof",
+              "eyebrow": "Durable proof in Git",
+              "title": "Every controlled task leaves evidence a reviewer can inspect.",
+              "text": "Task state, observations, verification status, and the Agent Change Record remain repository-owned and versioned together.",
+              "commit": "b1e9d4f",
+              "summary": "agentplane: fix parser edge case",
+              "files": [
+                {
+                  "path": ".agentplane/tasks/parser-edge/README.md"
+                },
+                {
+                  "path": ".agentplane/tasks/parser-edge/observations.jsonl"
+                },
+                {
+                  "path": ".agentplane/tasks/parser-edge/acr.json"
+                },
+                {
+                  "path": ".agentplane/tasks/parser-edge/evidence/manifest.json"
+                }
+              ],
+              "facts": [
+                {
+                  "label": "Authority",
+                  "value": "bounded WorkOrder"
+                },
+                {
+                  "label": "Scope",
+                  "value": "src/parser/**"
+                },
+                {
+                  "label": "Observed",
+                  "value": "3 paths changed"
+                },
+                {
+                  "label": "Verification",
+                  "value": "unit, lint, types passed"
+                }
+              ],
+              "footer": "Hash-verify the evidence bundle and review the ACR with standard Git tooling."
+            },
+            {
+              "_type": "ap_works_with",
+              "_version": 1,
+              "_key": "works-with",
+              "title": "Control plane, not another coding agent.",
+              "text": "Keep the model, editor, agent, and CI you already use. Agentplane gives each worker the same authority and evidence contract.",
+              "tools": [
+                {
+                  "name": "Codex"
+                },
+                {
+                  "name": "Claude Code"
+                },
+                {
+                  "name": "Cursor"
+                },
+                {
+                  "name": "Aider"
+                },
+                {
+                  "name": "Any repository-capable agent"
+                }
+              ]
+            },
+            {
+              "_type": "ap_closing",
+              "_version": 1,
+              "_key": "closing",
+              "title": "Put your next agent task under control.",
+              "text": "Start in a repository you own. Inspect the WorkOrder, run the agent, and review the task record and ACR in Git."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
