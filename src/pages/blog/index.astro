@@ -1,0 +1,9 @@
+---
+import{getEmDashCollection}from"emdash";import Base from"../../layouts/Base.astro";
+const{entries:cmsPosts}=await getEmDashCollection("posts",{orderBy:{published_at:"desc"},limit:50});
+const legacyModules=import.meta.glob("../../../blog/*.mdx",{eager:true});
+const legacyPosts=Object.entries(legacyModules).map(([path,mod]:any)=>({slug:mod.frontmatter?.slug??path.split("/").pop()?.replace(/^\d{4}-\d{2}-\d{2}-/,"").replace(/\.mdx$/,""),title:mod.frontmatter?.title??"Untitled",description:mod.frontmatter?.description??"",date:path.split("/").pop()?.slice(0,10)??""}));
+const cms=cmsPosts.map((p:any)=>({slug:p.id,title:p.data.title,description:p.data.excerpt??"",date:p.data.publishedAt?.toISOString().slice(0,10)??""}));
+const posts=[...cms,...legacyPosts].sort((a,b)=>b.date.localeCompare(a.date));
+---
+<Base title="Blog" description="Release notes, workflow deep dives, and implementation guidance from Agentplane."><main class="content-page"><h1>Agentplane Blog</h1><p>Release notes, control-plane design notes, workflow deep dives, and implementation guidance.</p><div class="blog-grid">{posts.map(post=><a class="blog-card" href={`/blog/${post.slug}`}><small>{post.date}</small><h2>{post.title}</h2><p>{post.description}</p></a>)}</div></main></Base>
