@@ -1,0 +1,11 @@
+---
+import Base from "../layouts/Base.astro";
+const examples=[
+["Debug an agent run with traces","Open a trace, inspect spans, and identify the failing workflow step.","7 min","agentplane trace open <run-id>","trace JSON","https://github.com/basilisk-labs/agentplane/blob/main/docs/examples/debug-agent-run-with-traces.mdx"],
+["Run a TDD workflow recipe","Structure an agent run around failing tests, implementation, and verification.","10 min","agentplane recipes install tdd","recipe YAML","https://github.com/basilisk-labs/agentplane/blob/main/docs/recipes/tdd.mdx"],
+["Export an OpenTelemetry-compatible trace","Export run evidence as JSON for another tool or review artifact.","5 min","agentplane trace export <run-id> --format otel-json","export file","https://github.com/basilisk-labs/agentplane/blob/main/docs/examples/export-traces.mdx"],
+["Create an Agent Change Record","Generate a machine-readable evidence record for AI-assisted engineering work.","5 min","agentplane acr generate <task-id> --write","acr.json","https://github.com/basilisk-labs/agentplane/blob/main/docs/reference/acr.mdx"],
+["Use local context for repo conventions","Keep repository rules inspectable instead of relying on fragile chat history.","8 min","agentplane context search \"repo conventions\"","task README","https://github.com/basilisk-labs/agentplane/blob/main/docs/user/local-context.mdx"]
+];
+---
+<Base title="Agentplane examples" description="Runnable Agentplane examples that produce inspectable artifacts."><main class="content-page"><h1>Examples that produce artifacts.</h1><p>Each example starts with commands and ends with something inspectable: a trace, recipe, context artifact, export, or Agent Change Record.</p><div class="blog-grid">{examples.map(([title,outcome,time,command,artifact,to])=><a class="blog-card" href={to}><small>{time}</small><h2>{title}</h2><p>{outcome}</p><p><strong>You get:</strong> {artifact}</p><code>{command}</code></a>)}</div></main></Base>
