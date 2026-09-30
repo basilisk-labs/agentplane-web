@@ -1,8 +1,40 @@
 {
-  "name":"agentplane-web","version":"0.1.0","private":true,"type":"module",
-  "emdash":{"seed":"seed/seed.json"},
-  "scripts":{"dev":"astro dev","start":"astro dev","build":"astro build","preview":"astro preview","typecheck":"astro check","check":"astro check && astro build","deploy":"astro build && wrangler deploy"},
-  "dependencies":{"@astrojs/cloudflare":"14.3.3","@astrojs/mdx":"8.0.2","@astrojs/react":"7.0.0","@emdash-cms/cloudflare":"1.0.1","astro":"7.3.5","emdash":"1.0.1","react":"19.3.0","react-dom":"19.3.0"},
-  "devDependencies":{"@astrojs/check":"^0.9.6","@cloudflare/workers-types":"^4.20260930.0","@types/react":"^19.2.0","@types/react-dom":"^19.2.0","typescript":"^6.0.3","wrangler":"^4.45.0"},
-  "engines":{"node":">=24"},"packageManager":"bun@1.4.2"
+  "name": "agentplane-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "emdash": {
+    "seed": "seed/seed.json"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "check": "astro check && astro build",
+    "deploy": "astro build && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "14.3.3",
+    "@astrojs/mdx": "8.0.2",
+    "@astrojs/react": "7.0.0",
+    "@emdash-cms/cloudflare": "1.0.1",
+    "astro": "7.3.5",
+    "emdash": "1.0.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@cloudflare/workers-types": "5.20260929.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^6.0.3",
+    "wrangler": "4.143.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "bun@1.4.2"
 }
