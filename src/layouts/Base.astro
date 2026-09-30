@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+interface Props{title?:string;description?:string;canonical?:string}
+const{title="Agentplane",description="The Git-native control plane for coding agents.",canonical=Astro.url.href}=Astro.props;
+const fullTitle=title==="Agentplane"?title:`${title} · Agentplane`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{fullTitle}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/>
+<link rel="icon" href="/img/favicon.ico"/><meta property="og:site_name" content="Agentplane"/><meta property="og:title" content={fullTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content="https://v2.agentplane.org/img/og-image.png"/><meta name="twitter:card" content="summary_large_image"/>
+</head>
+<body>
+<header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/" aria-label="Agentplane home"><img src="/img/agentplane.svg" alt="Agentplane"/></a><nav class="site-nav" aria-label="Primary"><a href="https://github.com/basilisk-labs/agentplane/blob/main/docs/index.mdx">Docs</a><a href="/examples">Examples</a><a href="/blog">Blog</a><a href="https://github.com/basilisk-labs/agentplane">GitHub</a><a class="site-install" href="https://www.npmjs.com/package/agentplane">npm i -g agentplane</a></nav></div></header>
+<slot/>
+<footer class="site-footer"><div class="site-footer__inner"><span>Agentplane · MIT licensed</span><nav><a href="https://github.com/basilisk-labs/agentplane">GitHub</a><a href="https://github.com/basilisk-labs/agentplane/blob/main/docs/index.mdx">Docs</a><a href="/blog">Blog</a><a href="/_emdash/admin">Admin</a></nav></div></footer>
+</body></html>
