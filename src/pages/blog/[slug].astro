@@ -1,0 +1,11 @@
+---
+import{getEmDashEntry}from"emdash";import{PortableText}from"emdash/ui";import Base from"../../layouts/Base.astro";
+const slug=Astro.params.slug!;const{entry:cmsPost}=await getEmDashEntry("posts",slug);
+const legacyModules=import.meta.glob("../../../blog/*.mdx",{eager:true});
+const legacy=Object.entries(legacyModules).map(([path,mod]:any)=>({path,mod})).find(({path,mod})=>mod.frontmatter?.slug===slug||path.includes(slug));
+if(!cmsPost&&!legacy)return Astro.rewrite("/404");
+const title=cmsPost?(cmsPost.data as any).title:legacy!.mod.frontmatter.title;
+const description=cmsPost?((cmsPost.data as any).excerpt??""):(legacy!.mod.frontmatter.description??"");
+const LegacyContent=legacy?.mod.Content;
+---
+<Base title={title} description={description} canonical={`https://v2.agentplane.org/blog/${slug}`}><article class="article"><header><h1>{title}</h1>{description&&<p class="lede">{description}</p>}</header><div class="article-content">{cmsPost?<PortableText value={(cmsPost.data as any).content}/>:LegacyContent&&<LegacyContent/>}</div></article></Base>
